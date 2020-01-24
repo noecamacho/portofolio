@@ -12,12 +12,36 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes transitionOut {
+  from {
+    opacity: 1;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: #030c1c;
-	-webkit-animation: breathing 30s infinite;
-	animation: breathing 30s infinite;
+	/* -webkit-animation: breathing 30s infinite;
+	animation: breathing 30s infinite; */
+	transition: 1s ease all;
 }
 .main {
 	display: block;
@@ -32,6 +56,7 @@ body {
 	font-size: 16vw;
 	text-align: center;
 	white-space: nowrap;
+
 }
 .main span {
 	display: block;
@@ -55,6 +80,9 @@ body {
 	-webkit-animation: blink 4s infinite alternate;
 	animation: blink 4s infinite alternate;
 	font-size: 11vw;
+	transition: 3s ease all;
+  animation: transitionIn 2s;
+
 }
 .main .subtitle {
 	font-size: 11vw;
